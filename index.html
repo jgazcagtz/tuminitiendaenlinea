@@ -189,30 +189,30 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="logoUrl">URL del Logo:</label>
+                    <label for="logoUrl">URL del Logo <p> Ejemplo: https://i.imgur.com/ALtaldZ.png </p></label>
                     <input type="url" id="logoUrl" name="logoUrl">
                 </div>
                 <div class="form-group">
                     <label for="whatsappNumber">Número de WhatsApp:</label>
-                    <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+34 123 456 789">
+                    <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+52 5512345678">
                 </div>
 
                 <div id="productsContainer">
                     <div class="form-group product-group" id="productGroup0">
                         <label for="productTitle0">Título del Producto:</label>
                         <input type="text" id="productTitle0" name="productTitle0">
-                        <label for="productDescription0">Descripción del Producto:</label>
-                        <input type="text" id="productDescription0" name="productDescription0">
-                        <label for="productImage0">URL de la Imagen del Producto:</label>
+                        <label for="productDescription0">Descripción del Producto o Servicio:</label>
+                        <input type="text" id="productDescription0" name="productDescription0"> 
+                       <br> <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
                         <input type="url" id="productImage0" name="productImage0">
-                        <label for="productPrice0">Precio del Producto:</label>
+                        <label for="productPrice0">Precio del Producto o Servicio:</label>
                         <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
-                        <button type="button" class="remove-product" onclick="removeProductFields(0)">Eliminar Producto</button>
+                        <button type="button" class="remove-product" onclick="removeProductFields(0)">Eliminar Producto o Servicio</button>
                     </div>
                 </div>
 
-                <button type="button" id="addProductButton" class="btn">Añadir Producto</button>
-                <button type="button" id="createStoreButton" class="btn">Crear Tienda</button>
+                <button type="button" id="addProductButton" class="btn">Añadir Producto o Servicio</button>
+                <button type="button" id="createStoreButton" class="btn">Crear MiniTienda</button>
             </form>
 <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
 
