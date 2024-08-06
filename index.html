@@ -1,0 +1,477 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crea Tu MiniTiendaExpress</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px;
+            background-color: #e3240b;
+            color: white;
+        }
+
+        header img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .form-group input[type="color"] {
+            padding: 0;
+            height: 40px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #e3240b;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ffdd00;
+            color: black;
+        }
+
+        .preview {
+            margin-top: 20px;
+        }
+
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-item img {
+            width: 100px;
+            height: 100px;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .product-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .whatsapp-contact {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .whatsapp-contact a {
+            color: #25D366;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .whatsapp-contact a:hover {
+            text-decoration: underline;
+        }
+
+        .menu-title-container {
+            margin-bottom: 40px; /* Espacio entre el título y los productos */
+        }
+
+        .product-heading {
+            margin-top: 30px;
+            font-size: 1.5em;
+            color: #e3240b;
+        }
+
+        .product-group {
+            margin-top: 20px;
+        }
+
+        .remove-product {
+            background-color: #e3240b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 10px;
+        }
+
+        .remove-product:hover {
+            background-color: #ffdd00;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Crear Tu MiniTienda Express</h1>
+    </header>
+    <main>
+        <form id="registrationForm">
+            <h2>Registro de Usuario</h2>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Teléfono:</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <button type="button" id="registerButton" class="btn">Registrarse</button>
+        </form>
+
+        <div id="storeSetup" style="display: none;">
+            <h2>Configuración de la Tienda</h2>
+            <form id="customizationForm">
+                <div class="form-group">
+                    <label for="shopName">Nombre de la Tienda:</label>
+                    <input type="text" id="shopName" name="shopName" required>
+                </div>
+                <div class="form-group">
+                    <label for="themeColor">Color del Tema:</label>
+                    <input type="color" id="themeColor" name="themeColor" value="#e3240b">
+                </div>
+                <div class="form-group">
+                    <label for="font">Fuente:</label>
+                    <select id="font" name="font">
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="logoUrl">URL del Logo:</label>
+                    <input type="url" id="logoUrl" name="logoUrl">
+                </div>
+                <div class="form-group">
+                    <label for="whatsappNumber">Número de WhatsApp:</label>
+                    <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+34 123 456 789">
+                </div>
+
+                <div id="productsContainer">
+                    <div class="form-group product-group" id="productGroup0">
+                        <label for="productTitle0">Título del Producto:</label>
+                        <input type="text" id="productTitle0" name="productTitle0">
+                        <label for="productDescription0">Descripción del Producto:</label>
+                        <input type="text" id="productDescription0" name="productDescription0">
+                        <label for="productImage0">URL de la Imagen del Producto:</label>
+                        <input type="url" id="productImage0" name="productImage0">
+                        <label for="productPrice0">Precio del Producto:</label>
+                        <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
+                        <button type="button" class="remove-product" onclick="removeProductFields(0)">Eliminar Producto</button>
+                    </div>
+                </div>
+
+                <button type="button" id="addProductButton" class="btn">Añadir Producto</button>
+                <button type="button" id="createStoreButton" class="btn">Crear Tienda</button>
+            </form>
+
+            <div class="preview" id="preview">
+                <!-- La vista previa de la tienda personalizada aparecerá aquí -->
+            </div>
+        </div>
+    </main>
+    <script>
+        let productIndex = 1;
+
+        function addProductFields() {
+            if (productIndex >= 10) return;
+
+            const container = document.getElementById('productsContainer');
+            const productGroup = document.createElement('div');
+            productGroup.classList.add('form-group', 'product-group');
+            productGroup.id = `productGroup${productIndex}`;
+            productGroup.innerHTML = `
+                <h3 class="product-heading">Agregar Producto</h3>
+                <label for="productTitle${productIndex}">Título del Producto:</label>
+                <input type="text" id="productTitle${productIndex}" name="productTitle${productIndex}">
+                <label for="productDescription${productIndex}">Descripción del Producto:</label>
+                <input type="text" id="productDescription${productIndex}" name="productDescription${productIndex}">
+                <label for="productImage${productIndex}">URL de la Imagen del Producto:</label>
+                <input type="url" id="productImage${productIndex}" name="productImage${productIndex}">
+                <label for="productPrice${productIndex}">Precio del Producto:</label>
+                <input type="number" id="productPrice${productIndex}" name="productPrice${productIndex}" step="0.01" min="0">
+                <button type="button" class="remove-product" onclick="removeProductFields(${productIndex})">Eliminar Producto</button>
+            `;
+            container.appendChild(productGroup);
+            productIndex++;
+            updatePreview();
+        }
+
+        function removeProductFields(index) {
+            const productGroup = document.getElementById(`productGroup${index}`);
+            if (productGroup) {
+                productGroup.remove();
+                updatePreview();
+            }
+        }
+
+        function updatePreview() {
+            const shopName = document.getElementById('shopName').value;
+            const themeColor = document.getElementById('themeColor').value;
+            const font = document.getElementById('font').value;
+            const logoUrl = document.getElementById('logoUrl').value;
+            const whatsappNumber = document.getElementById('whatsappNumber').value;
+
+            const preview = document.getElementById('preview');
+            let productsHtml = '';
+
+            for (let i = 0; i < productIndex; i++) {
+                const title = document.getElementById(`productTitle${i}`)?.value || '';
+                const description = document.getElementById(`productDescription${i}`)?.value || '';
+                const image = document.getElementById(`productImage${i}`)?.value || 'https://via.placeholder.com/100';
+                const price = document.getElementById(`productPrice${i}`)?.value || '0.00';
+
+                if (title && description) {
+                    productsHtml += `
+                        <div class="product-item">
+                            <img src="${image}" alt="${title}">
+                            <h3>${title}</h3>
+                            <p>${description}</p>
+                            <p>Precio: $${parseFloat(price).toFixed(2)}</p>
+                        </div>
+                    `;
+                }
+            }
+
+            preview.innerHTML = `
+                <header style="background-color: ${themeColor}; font-family: ${font};">
+                    <img src="${logoUrl}" alt="Logo">
+                    <h1>${shopName}</h1>
+                </header>
+                <main style="font-family: ${font};">
+                    <div class="menu-title-container" style="background-color: ${themeColor}; color: white;">
+                        <h2 style="margin-bottom: 40px;">Tienda en Línea</h2>
+                    </div>
+                    <div class="product-grid">
+                        ${productsHtml}
+                    </div>
+                    ${whatsappNumber ? `<div class="whatsapp-contact">
+                        <p>Contacta con nosotros en <a href="https://wa.me/${whatsappNumber}" target="_blank">WhatsApp</a></p>
+                    </div>` : ''}
+                </main>
+            `;
+        }
+
+        function showStoreSetup() {
+            document.getElementById('registrationForm').style.display = 'none';
+            document.getElementById('storeSetup').style.display = 'block';
+        }
+
+        function saveStore() {
+            const shopName = document.getElementById('shopName').value;
+            const themeColor = document.getElementById('themeColor').value;
+            const font = document.getElementById('font').value;
+            const logoUrl = document.getElementById('logoUrl').value;
+            const whatsappNumber = document.getElementById('whatsappNumber').value;
+
+            const products = [];
+            for (let i = 0; i < productIndex; i++) {
+                const title = document.getElementById(`productTitle${i}`)?.value || '';
+                const description = document.getElementById(`productDescription${i}`)?.value || '';
+                const image = document.getElementById(`productImage${i}`)?.value || 'https://via.placeholder.com/100';
+                const price = document.getElementById(`productPrice${i}`)?.value || '0.00';
+
+                if (title && description) {
+                    products.push({ title, description, image, price });
+                }
+            }
+
+            const storeData = { shopName, themeColor, font, logoUrl, whatsappNumber, products };
+            localStorage.setItem('storeData', JSON.stringify(storeData));
+        }
+
+        document.getElementById('registerButton').addEventListener('click', showStoreSetup);
+        document.getElementById('addProductButton').addEventListener('click', addProductFields);
+        document.getElementById('customizationForm').addEventListener('input', updatePreview);
+
+        document.getElementById('createStoreButton').addEventListener('click', function() {
+            saveStore();
+            const storeData = JSON.parse(localStorage.getItem('storeData'));
+            const storeWindow = window.open('', '_blank');
+            
+            storeWindow.document.open();
+           storeWindow.document.write(`
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>${storeData.shopName}</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+        <style>
+            body {
+                font-family: '${storeData.font}', sans-serif;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                background-color: #f9f9f9;
+                color: #333;
+            }
+
+            header {
+                text-align: center;
+                padding: 20px;
+                background-color: ${storeData.themeColor};
+                color: white;
+            }
+
+            header img {
+                width: 150px;
+                height: 150px;
+                border-radius: 50%;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+
+            main {
+                padding: 20px;
+            }
+
+            .product-item {
+                border: 1px solid #ddd;
+                border-radius: 8px;
+                padding: 15px;
+                background: #fff;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                text-align: center;
+            }
+
+            .product-item img {
+                width: 100px;
+                height: 100px;
+                border-radius: 10px;
+                object-fit: cover;
+                margin-bottom: 10px;
+            }
+
+            .product-grid {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
+                justify-content: center;
+            }
+
+            .whatsapp-contact {
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .whatsapp-contact a {
+                color: #25D366;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+            .whatsapp-contact a:hover {
+                text-decoration: underline;
+            }
+
+            .menu-title-container {
+                text-align: center;
+                margin-bottom: 40px;
+                background-color: ${storeData.themeColor};
+                color: white;
+            }
+
+            .menu-title-container h2 {
+                margin: 0;
+                padding: 10px;
+            }
+
+            .product-heading {
+                margin-top: 30px;
+                font-size: 1.5em;
+                color: #e3240b;
+            }
+
+            .product-group {
+                margin-top: 20px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <header>
+            <img src="${storeData.logoUrl || 'https://via.placeholder.com/150'}" alt="Logo">
+            <h1>${storeData.shopName}</h1>
+        </header>
+        <main>
+            <div class="menu-title-container">
+                <h2>Tienda en Línea</h2>
+            </div>
+            <div class="product-grid">
+                ${storeData.products.map(product => `
+                    <div class="product-item">
+                        <img src="${product.image}" alt="${product.title}">
+                        <h3>${product.title}</h3>
+                        <p>${product.description}</p>
+                        <p>Precio: $${parseFloat(product.price).toFixed(2)}</p>
+                    </div>
+                `).join('')}
+            </div>
+            ${storeData.whatsappNumber ? `<div class="whatsapp-contact">
+                <p>Contacta con nosotros en <a href="https://wa.me/${storeData.whatsappNumber}" target="_blank">WhatsApp</a></p>
+            </div>` : ''}
+            <p>¿Te gustó tu tienda? <a href="https://minitienda.online" target="_blank">Cómprala aquí</a></p>
+
+        </main>
+    </body>
+    </html>
+`);
+
+            storeWindow.document.close();
+        });
+    </script>
+</body>
+</html>
+
