@@ -266,6 +266,19 @@
             width: 100%;
             animation: fadeInDown 0.5s;
             box-sizing: border-box;
+            font-size: 0.9em;
+        }
+
+        #guideContent h2 {
+            font-size: 1.5em;
+        }
+
+        #guideContent h3 {
+            font-size: 1.2em;
+        }
+
+        #guideContent h4 {
+            font-size: 1em;
         }
 
         #closeGuide {
@@ -300,6 +313,34 @@
         #downloadGuide:hover {
             background-color: #ffdd00;
             color: black;
+        }
+
+        /* Media Queries for Mobile Responsiveness */
+        @media (max-width: 768px) {
+            header img {
+                width: 100px;
+            }
+
+            .btn {
+                font-size: 1em;
+                padding: 10px 20px;
+            }
+
+            #guideContent {
+                font-size: 0.8em;
+            }
+
+            #guideContent h2 {
+                font-size: 1.2em;
+            }
+
+            #guideContent h3 {
+                font-size: 1em;
+            }
+
+            #guideContent h4 {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
@@ -389,47 +430,7 @@
 
     <div id="guideModal">
         <div id="guideContent">
-            <h2>Guide to Creating Your Mini Online Store</h2>
-            <h3>English Version</h3>
-            <h4>Header Section</h4>
-            <ul>
-                <li>Logo: Add the URL of your store's logo where it says "LOGO_URL".</li>
-                <li>Title: Change the text "Crea Tu MiniTienda Express" to your store's name.</li>
-            </ul>
-            <h4>Store Configuration</h4>
-            <ul>
-                <li>Store Name: In the form group with the label "Nombre de la Tienda:", input the name of your store.</li>
-                <li>Theme Color: Set the desired theme color using the color picker.</li>
-                <li>Font: Select a font from the dropdown options.</li>
-                <li>Logo URL: Provide the URL of your logo image.</li>
-                <li>Background Color: Choose a background color for your store.</li>
-                <li>Background Image: Provide a URL for a background image if desired.</li>
-                <li>WhatsApp Number: Enter your WhatsApp number for customer contact.</li>
-            </ul>
-            <h4>Adding Products or Services</h4>
-            <ul>
-                <li>Product Name: Enter the name of your product or service in the "Nombre del Producto o Servicio:" field.</li>
-                <li>Product Description: Describe your product or service.</li>
-                <li>Product Image URL: Provide the URL for the product image.</li>
-                <li>Product Price: Enter the price of your product or service.</li>
-                <li>Add More Products: Click the "Añadir Producto o Servicio" button to add more products. Repeat the steps for each product.</li>
-                <li>Remove Product: Use the "Eliminar Producto o Servicio" button to remove any product.</li>
-            </ul>
-            <h4>Preview and Customize</h4>
-            <ul>
-                <li>Preview Section: The preview section will dynamically update as you input information. This allows you to see how your store will look before finalizing.</li>
-                <li>Customization: Adjust any settings and add/remove products until satisfied with the store's appearance.</li>
-            </ul>
-            <h4>Finalizing and Saving</h4>
-            <ul>
-                <li>Create Store: Click on the "Crear MiniTienda" button to finalize your store.</li>
-                <li>Download Code: Use the "Descargar Código" button to download the HTML code of your customized store. This file can be uploaded to a web server to make your store live.</li>
-            </ul>
-            <h4>Additional Resources</h4>
-            <ul>
-                <li>Image Uploads: Use Imgur to upload images.</li>
-                <li>Color Picker: Use Image Color Picker to find the perfect color scheme.</li>
-            </ul>
+            
 
             <h3>Spanish Version</h3>
             <h4>Guía para Crear tu MiniTienda en Línea</h4>
