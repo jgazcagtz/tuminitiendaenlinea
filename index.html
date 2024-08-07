@@ -21,14 +21,6 @@
             color: white;
         }
 
-        header img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-
         main {
             padding: 20px;
         }
@@ -116,7 +108,7 @@
         }
 
         .menu-title-container {
-            margin-bottom: 40px; /* Espacio entre el título y los productos */
+            margin-bottom: 40px;
         }
 
         .product-heading {
@@ -144,7 +136,6 @@
             background-color: #ffdd00;
             color: black;
         }
-
     </style>
 </head>
 <body>
@@ -152,24 +143,7 @@
         <h1>Crear Tu MiniTienda Express</h1>
     </header>
     <main>
-        <form id="registrationForm">
-            <h2>Registro de Usuario</h2>
-            <div class="form-group">
-                <label for="name">Nombre:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Correo Electrónico:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <button type="button" id="registerButton" class="btn">Registrarse</button>
-        </form>
-
-        <div id="storeSetup" style="display: none;">
+        <div id="storeSetup">
             <h2>Configuración de la Tienda</h2>
             <form id="customizationForm">
                 <div class="form-group">
@@ -203,7 +177,7 @@
                         <input type="text" id="productTitle0" name="productTitle0">
                         <label for="productDescription0">Descripción del Producto o Servicio:</label>
                         <input type="text" id="productDescription0" name="productDescription0"> 
-                       <br> <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
+                        <br> <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
                         <input type="url" id="productImage0" name="productImage0">
                         <label for="productPrice0">Precio del Producto o Servicio:</label>
                         <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
@@ -213,8 +187,8 @@
 
                 <button type="button" id="addProductButton" class="btn">Añadir Producto o Servicio</button>
                 <button type="button" id="createStoreButton" class="btn">Crear MiniTienda</button>
+                <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
             </form>
-<button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
 
             <div class="preview" id="preview">
                 <!-- La vista previa de la tienda personalizada aparecerá aquí -->
@@ -303,11 +277,6 @@
             `;
         }
 
-        function showStoreSetup() {
-            document.getElementById('registrationForm').style.display = 'none';
-            document.getElementById('storeSetup').style.display = 'block';
-        }
-
         function saveStore() {
             const shopName = document.getElementById('shopName').value;
             const themeColor = document.getElementById('themeColor').value;
@@ -331,7 +300,6 @@
             localStorage.setItem('storeData', JSON.stringify(storeData));
         }
 
-        document.getElementById('registerButton').addEventListener('click', showStoreSetup);
         document.getElementById('addProductButton').addEventListener('click', addProductFields);
         document.getElementById('customizationForm').addEventListener('input', updatePreview);
 
@@ -341,142 +309,141 @@
             const storeWindow = window.open('', '_blank');
             
             storeWindow.document.open();
-           storeWindow.document.write(`
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>${storeData.shopName}</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-        <style>
-            body {
-                font-family: '${storeData.font}', sans-serif;
-                margin: 0;
-                padding: 0;
-                box-sizing: border-box;
-                background-color: #f9f9f9;
-                color: #333;
-            }
+            storeWindow.document.write(`
+                <!DOCTYPE html>
+                <html lang="es">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>${storeData.shopName}</title>
+                    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+                    <style>
+                        body {
+                            font-family: '${storeData.font}', sans-serif;
+                            margin: 0;
+                            padding: 0;
+                            box-sizing: border-box;
+                            background-color: #f9f9f9;
+                            color: #333;
+                        }
 
-            header {
-                text-align: center;
-                padding: 20px;
-                background-color: ${storeData.themeColor};
-                color: white;
-            }
+                        header {
+                            text-align: center;
+                            padding: 20px;
+                            background-color: ${storeData.themeColor};
+                            color: white;
+                        }
 
-            header img {
-                width: 150px;
-                height: 150px;
-                border-radius: 50%;
-                object-fit: cover;
-                margin-bottom: 10px;
-            }
+                        header img {
+                            width: 150px;
+                            height: 150px;
+                            border-radius: 50%;
+                            object-fit: cover;
+                            margin-bottom: 10px;
+                        }
 
-            main {
-                padding: 20px;
-            }
+                        main {
+                            padding: 20px;
+                        }
 
-            .product-item {
-                border: 1px solid #ddd;
-                border-radius: 8px;
-                padding: 15px;
-                background: #fff;
-                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-                text-align: center;
-            }
+                        .product-item {
+                            border: 1px solid #ddd;
+                            border-radius: 8px;
+                            padding: 15px;
+                            background: #fff;
+                            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                            text-align: center;
+                        }
 
-            .product-item img {
-                width: 100px;
-                height: 100px;
-                border-radius: 10px;
-                object-fit: cover;
-                margin-bottom: 10px;
-            }
+                        .product-item img {
+                            width: 100px;
+                            height: 100px;
+                            border-radius: 10px;
+                            object-fit: cover;
+                            margin-bottom: 10px;
+                        }
 
-            .product-grid {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 20px;
-                justify-content: center;
-            }
+                        .product-grid {
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 20px;
+                            justify-content: center;
+                        }
 
-            .whatsapp-contact {
-                margin-top: 20px;
-                text-align: center;
-            }
+                        .whatsapp-contact {
+                            margin-top: 20px;
+                            text-align: center;
+                        }
 
-            .whatsapp-contact a {
-                color: #25D366;
-                text-decoration: none;
-                font-weight: bold;
-            }
+                        .whatsapp-contact a {
+                            color: #25D366;
+                            text-decoration: none;
+                            font-weight: bold;
+                        }
 
-            .whatsapp-contact a:hover {
-                text-decoration: underline;
-            }
+                        .whatsapp-contact a:hover {
+                            text-decoration: underline;
+                        }
 
-            .menu-title-container {
-                text-align: center;
-                margin-bottom: 40px;
-                background-color: ${storeData.themeColor};
-                color: white;
-            }
+                        .menu-title-container {
+                            text-align: center;
+                            margin-bottom: 40px;
+                            background-color: ${storeData.themeColor};
+                            color: white;
+                        }
 
-            .menu-title-container h2 {
-                margin: 0;
-                padding: 10px;
-            }
+                        .menu-title-container h2 {
+                            margin: 0;
+                            padding: 10px;
+                        }
 
-            .product-heading {
-                margin-top: 30px;
-                font-size: 1.5em;
-                color: #e3240b;
-            }
+                        .product-heading {
+                            margin-top: 30px;
+                            font-size: 1.5em;
+                            color: #e3240b;
+                        }
 
-            .product-group {
-                margin-top: 20px;
-            }
-
-        </style>
-    </head>
-    <body>
-        <header>
-            <img src="${storeData.logoUrl || 'https://via.placeholder.com/150'}" alt="Logo">
-            <h1>${storeData.shopName}</h1>
-        </header>
-        <main>
-            <div class="menu-title-container">
-                <h2>Tienda en Línea</h2>
-            </div>
-            <div class="product-grid">
-                ${storeData.products.map(product => `
-                    <div class="product-item">
-                        <img src="${product.image}" alt="${product.title}">
-                        <h3>${product.title}</h3>
-                        <p>${product.description}</p>
-                        <p>Precio: $${parseFloat(product.price).toFixed(2)}</p>
-                    </div>
-                `).join('')}
-            </div>
-            ${storeData.whatsappNumber ? `<div class="whatsapp-contact">
-                <p>Contacta con nosotros en <a href="https://wa.me/${storeData.whatsappNumber}" target="_blank">WhatsApp</a></p>
-            </div>` : ''}
-            
-            <p>¿Tu MiniTienda está lista? ¡No olvides descargar tu código!<a href="https://minitienda.online" target="_blank">Contáctanos para ayudarte a ponerla en línea. </a></p>
-
-        </main>
-    </body>
-    </html>
-`);
+                        .product-group {
+                            margin-top: 20px;
+                        }
+                    </style>
+                </head>
+                <body>
+                    <header>
+                        <img src="${storeData.logoUrl || 'https://via.placeholder.com/150'}" alt="Logo">
+                        <h1>${storeData.shopName}</h1>
+                    </header>
+                    <main>
+                        <div class="menu-title-container">
+                            <h2>Tienda en Línea</h2>
+                        </div>
+                        <div class="product-grid">
+                            ${storeData.products.map(product => `
+                                <div class="product-item">
+                                    <img src="${product.image}" alt="${product.title}">
+                                    <h3>${product.title}</h3>
+                                    <p>${product.description}</p>
+                                    <p>Precio: $${parseFloat(product.price).toFixed(2)}</p>
+                                </div>
+                            `).join('')}
+                        </div>
+                        ${storeData.whatsappNumber ? `<div class="whatsapp-contact">
+                            <p>Contacta con nosotros en <a href="https://wa.me/${storeData.whatsappNumber}" target="_blank">WhatsApp</a></p>
+                        </div>` : ''}
+                        
+                        <p>¿Tu MiniTienda está lista? ¡No olvides descargar tu código!<a href="https://minitienda.online" target="_blank">Contáctanos para ayudarte a desplegar tu MiniTienda en línea. </a></p>
+                    </main>
+                </body>
+                </html>
+            `);
 
             storeWindow.document.close();
         });
-      document.getElementById('downloadCodeButton').addEventListener('click', function() {
-    const storeData = JSON.parse(localStorage.getItem('storeData'));
-    
-    const htmlContent = `
+
+        document.getElementById('downloadCodeButton').addEventListener('click', function() {
+            const storeData = JSON.parse(localStorage.getItem('storeData'));
+            
+            const htmlContent = `
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -594,14 +561,14 @@
 </html>
 `;
 
-    const blob = new Blob([htmlContent], { type: 'text/html' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = `${storeData.shopName.replace(/\s+/g, '_')}_store.html`;
-    a.click();
-    URL.revokeObjectURL(url);
-});
+            const blob = new Blob([htmlContent], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `${storeData.shopName.replace(/\s+/g, '_')}_store.html`;
+            a.click();
+            URL.revokeObjectURL(url);
+        });
 
     </script>
 </body>
