@@ -1,5 +1,4 @@
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -352,6 +351,15 @@
         <p>❤️</p>
     </header>
     <main>
+        <div class="resources">
+            <h3>Recursos para crear tu página:</h3>
+            <ul>
+                <li><a href="https://imgur.com/">Imgur</a></li>
+                <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li>
+            </ul>
+            <button class="btn" id="downloadGuideButton">Descargar "Guía paso a paso"</button>
+        </div>
+
         <div id="storeSetup">
             <h2>Configuración de la Tienda</h2>
             <form id="customizationForm">
@@ -409,15 +417,7 @@
                 <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
                 <button type="button" id="guideButton" class="btn">Guía Paso a Paso</button>
             </form>
-
-            <div class="resources">
-                <h3>Recursos para crear tu página:</h3>
-                <ul>
-                    <li><a href="https://imgur.com/">Imgur</a></li>
-                    <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li>
-                </ul>
-            </div>
-
+            
             <div class="preview" id="preview">
                 <h2>Vista Previa de tu MiniTienda Express:</h2>
                 <!-- La vista previa de la tienda personalizada aparecerá aquí -->
@@ -430,8 +430,6 @@
 
     <div id="guideModal">
         <div id="guideContent">
-            
-
             <h3>Spanish Version</h3>
             <h4>Guía para Crear tu MiniTienda en Línea</h4>
             <h4>Sección de Encabezado</h4>
@@ -869,17 +867,86 @@
             document.getElementById('guideModal').style.display = 'none';
         });
 
-        document.getElementById('downloadGuide').addEventListener('click', function() {
-            const guideContent = document.getElementById('guideContent').innerHTML;
-            const blob = new Blob([guideContent], { type: 'text/html' });
+        document.getElementById('downloadGuideButton').addEventListener('click', function() {
+            const guideContent = `Guía paso a paso
+English Version
+Header Section
+
+Logo: Add the URL of your store's logo where it says "LOGO_URL".
+Title: Change the text "Crea Tu MiniTienda Express" to your store's name.
+Store Configuration
+
+Store Name: In the form group with the label "Nombre de la Tienda:", input the name of your store.
+Theme Color: Set the desired theme color using the color picker.
+Font: Select a font from the dropdown options.
+Logo URL: Provide the URL of your logo image.
+Background Color: Choose a background color for your store.
+Background Image: Provide a URL for a background image if desired.
+WhatsApp Number: Enter your WhatsApp number for customer contact.
+Adding Products or Services
+
+Product Name: Enter the name of your product or service in the "Nombre del Producto o Servicio:" field.
+Product Description: Describe your product or service.
+Product Image URL: Provide the URL for the product image.
+Product Price: Enter the price of your product or service.
+Add More Products: Click the "Añadir Producto o Servicio" button to add more products. Repeat the steps for each product.
+Remove Product: Use the "Eliminar Producto o Servicio" button to remove any product.
+Preview and Customize
+
+Preview Section: The preview section will dynamically update as you input information. This allows you to see how your store will look before finalizing.
+Customization: Adjust any settings and add/remove products until satisfied with the store's appearance.
+Finalizing and Saving
+
+Create Store: Click on the "Crear MiniTienda" button to finalize your store.
+Download Code: Use the "Descargar Código" button to download the HTML code of your customized store. This file can be uploaded to a web server to make your store live.
+Additional Resources
+
+Image Uploads: Use Imgur to upload images.
+Color Picker: Use Image Color Picker to find the perfect color scheme.
+Spanish Version
+Guía para Crear tu MiniTienda en Línea
+Sección de Encabezado
+
+Logo: Agrega la URL del logo de tu tienda donde dice "LOGO_URL".
+Título: Cambia el texto "Crea Tu MiniTienda Express" por el nombre de tu tienda.
+Configuración de la Tienda
+
+Nombre de la Tienda: En el grupo de formulario con la etiqueta "Nombre de la Tienda:", ingresa el nombre de tu tienda.
+Color del Tema: Establece el color del tema deseado usando el selector de color.
+Fuente: Selecciona una fuente del menú desplegable.
+URL del Logo: Proporciona la URL de la imagen de tu logo.
+Color de Fondo: Elige un color de fondo para tu tienda.
+Imagen de Fondo: Proporciona una URL para una imagen de fondo si lo deseas.
+Número de WhatsApp: Ingresa tu número de WhatsApp para el contacto con clientes.
+Agregar Productos o Servicios
+
+Nombre del Producto: Ingresa el nombre de tu producto o servicio en el campo "Nombre del Producto o Servicio:".
+Descripción del Producto: Describe tu producto o servicio.
+URL de la Imagen del Producto: Proporciona la URL de la imagen del producto.
+Precio del Producto: Ingresa el precio de tu producto o servicio.
+Añadir Más Productos: Haz clic en el botón "Añadir Producto o Servicio" para agregar más productos. Repite los pasos para cada producto.
+Eliminar Producto: Usa el botón "Eliminar Producto o Servicio" para eliminar cualquier producto.
+Vista Previa y Personalización
+
+Sección de Vista Previa: La sección de vista previa se actualizará dinámicamente a medida que ingreses la información. Esto te permite ver cómo se verá tu tienda antes de finalizar.
+Personalización: Ajusta cualquier configuración y agrega/elimina productos hasta que estés satisfecho con la apariencia de la tienda.
+Finalización y Guardado
+
+Crear Tienda: Haz clic en el botón "Crear MiniTienda" para finalizar tu tienda.
+Descargar Código: Usa el botón "Descargar Código" para descargar el código HTML de tu tienda personalizada. Este archivo se puede cargar en un servidor web para hacer que tu tienda esté en línea.
+Recursos Adicionales
+
+Carga de Imágenes: Usa Imgur para subir imágenes.
+Selector de Colores: Usa Image Color Picker para encontrar la combinación de colores perfecta.`;
+
+            const blob = new Blob([guideContent], { type: 'text/plain' });
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = 'Guide_to_Creating_Your_Mini_Online_Store.html';
+            a.download = 'Guía_paso_a_paso.txt';
             a.click();
             URL.revokeObjectURL(url);
         });
     </script>
 </body>
-
 </html>
