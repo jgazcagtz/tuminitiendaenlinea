@@ -1,4 +1,6 @@
+
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -34,7 +36,8 @@
             margin-bottom: 5px;
         }
 
-        .form-group input, .form-group select {
+        .form-group input,
+        .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
@@ -57,6 +60,7 @@
             cursor: pointer;
             font-size: 1.1em;
             margin-top: 10px;
+            transition: all 0.3s ease;
         }
 
         .btn:hover {
@@ -66,6 +70,24 @@
 
         .preview {
             margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+        }
+
+        .preview-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .preview-header img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
         }
 
         .product-item {
@@ -95,6 +117,10 @@
         .whatsapp-contact {
             margin-top: 20px;
             text-align: center;
+        }
+
+        .whatsapp-contact p {
+            color: black;
         }
 
         .whatsapp-contact a {
@@ -130,17 +156,93 @@
             cursor: pointer;
             font-size: 1em;
             margin-top: 10px;
+            transition: all 0.3s ease;
         }
 
         .remove-product:hover {
             background-color: #ffdd00;
             color: black;
         }
+
+        footer {
+            text-align: center;
+            padding: 2px;
+            background-color: #e3240b;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .resources {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            color: #e3240b;
+            border-radius: 8px;
+        }
+
+        .resources a {
+            color: #e3240b;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .resources a:hover {
+            text-decoration: underline;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        header,
+        .form-group,
+        .btn,
+        .product-item,
+        .whatsapp-contact,
+        .menu-title-container,
+        .remove-product,
+        footer,
+        .resources {
+            animation: fadeIn 1s ease-in-out;
+        }
     </style>
 </head>
+
 <body>
     <header>
-        <h1>Crear Tu MiniTienda Express</h1>
+        <h1>Crea Tu MiniTienda Express</h1>
     </header>
     <main>
         <div id="storeSetup">
@@ -163,8 +265,18 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="logoUrl">URL del Logo <p> Ejemplo: https://i.imgur.com/ALtaldZ.png </p></label>
+                    <label for="logoUrl">URL del Logo
+                        <p> Ejemplo: https://i.imgur.com/ALtaldZ.png </p>
+                    </label>
                     <input type="url" id="logoUrl" name="logoUrl">
+                </div>
+                <div class="form-group">
+                    <label for="backgroundColor">Color de Fondo:</label>
+                    <input type="color" id="backgroundColor" name="backgroundColor" value="#ffffff">
+                </div>
+                <div class="form-group">
+                    <label for="backgroundImage">URL de la Imagen de Fondo:</label>
+                    <input type="url" id="backgroundImage" name="backgroundImage" placeholder="https://example.com/image.jpg">
                 </div>
                 <div class="form-group">
                     <label for="whatsappNumber">Número de WhatsApp:</label>
@@ -176,8 +288,8 @@
                         <label for="productTitle0">Nombre del Producto o Servicio:</label>
                         <input type="text" id="productTitle0" name="productTitle0">
                         <label for="productDescription0">Descripción del Producto o Servicio:</label>
-                        <input type="text" id="productDescription0" name="productDescription0"> 
-                        <br> <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
+                        <input type="text" id="productDescription0" name="productDescription0">
+                        <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
                         <input type="url" id="productImage0" name="productImage0">
                         <label for="productPrice0">Precio del Producto o Servicio:</label>
                         <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
@@ -190,11 +302,23 @@
                 <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
             </form>
 
+            <div class="resources">
+                <h3>Recursos para crear tu página:</h3>
+                <ul>
+                    <li><a href="https://imgur.com/">Imgur</a></li>
+                    <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li>
+                </ul>
+            </div>
+
             <div class="preview" id="preview">
+                <h2>Vista Previa de tu MiniTienda Express:</h2>
                 <!-- La vista previa de la tienda personalizada aparecerá aquí -->
             </div>
         </div>
     </main>
+    <footer>
+        MiniTienda Express ® 2024
+    </footer>
     <script>
         let productIndex = 1;
 
@@ -235,6 +359,8 @@
             const themeColor = document.getElementById('themeColor').value;
             const font = document.getElementById('font').value;
             const logoUrl = document.getElementById('logoUrl').value;
+            const backgroundColor = document.getElementById('backgroundColor').value;
+            const backgroundImage = document.getElementById('backgroundImage').value;
             const whatsappNumber = document.getElementById('whatsappNumber').value;
 
             const preview = document.getElementById('preview');
@@ -259,11 +385,11 @@
             }
 
             preview.innerHTML = `
-                <header style="background-color: ${themeColor}; font-family: ${font};">
+                <div class="preview-header" style="background-color: ${themeColor}; font-family: ${font}; color: white;">
                     <img src="${logoUrl}" alt="Logo">
                     <h1>${shopName}</h1>
-                </header>
-                <main style="font-family: ${font};">
+                </div>
+                <main style="font-family: ${font}; background-color: ${backgroundColor}; background-image: url(${backgroundImage}); background-size: cover;">
                     <div class="menu-title-container" style="background-color: ${themeColor}; color: white;">
                         <h2 style="margin-bottom: 40px;">Tienda en Línea</h2>
                     </div>
@@ -271,7 +397,7 @@
                         ${productsHtml}
                     </div>
                     ${whatsappNumber ? `<div class="whatsapp-contact">
-                        <p>Contacta con nosotros en <a href="https://wa.me/${whatsappNumber}" target="_blank">WhatsApp</a></p>
+                        <p>Contacta con nosotros en: <a href="https://wa.me/${whatsappNumber}" target="_blank">WhatsApp</a></p>
                     </div>` : ''}
                 </main>
             `;
@@ -282,6 +408,8 @@
             const themeColor = document.getElementById('themeColor').value;
             const font = document.getElementById('font').value;
             const logoUrl = document.getElementById('logoUrl').value;
+            const backgroundColor = document.getElementById('backgroundColor').value;
+            const backgroundImage = document.getElementById('backgroundImage').value;
             const whatsappNumber = document.getElementById('whatsappNumber').value;
 
             const products = [];
@@ -296,7 +424,7 @@
                 }
             }
 
-            const storeData = { shopName, themeColor, font, logoUrl, whatsappNumber, products };
+            const storeData = { shopName, themeColor, font, logoUrl, backgroundColor, backgroundImage, whatsappNumber, products };
             localStorage.setItem('storeData', JSON.stringify(storeData));
         }
 
@@ -323,7 +451,9 @@
                             margin: 0;
                             padding: 0;
                             box-sizing: border-box;
-                            background-color: #f9f9f9;
+                            background-color: ${storeData.backgroundColor};
+                            background-image: url(${storeData.backgroundImage});
+                            background-size: cover;
                             color: #333;
                         }
 
@@ -457,7 +587,9 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f9f9f9;
+            background-color: ${storeData.backgroundColor};
+            background-image: url(${storeData.backgroundImage});
+            background-size: cover;
             color: #333;
         }
 
@@ -572,4 +704,5 @@
 
     </script>
 </body>
+
 </html>
