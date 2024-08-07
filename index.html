@@ -169,14 +169,16 @@
         }
 
         footer {
-            text-align: center;
-            padding: 2px;
-            background-color: #ff3131;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-        }
+    text-align: center;
+    padding: 0.5px;
+    background-color: #ff3131;
+    color: white;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    /* Adjust the bottom padding or margin of the main content to ensure it doesn't overlap with the footer */
+    margin-bottom: 0px;
+}
 
         .resources {
             margin-top: 20px;
@@ -359,7 +361,10 @@
             </ul>
             <button class="btn" id="downloadGuideButton">Descargar "Guía paso a paso"</button>
         </div>
-
+ <div class="contact">
+            <h3>¿Tienes alguna pregunta? ¿Necesitas ayuda?</h3>
+            <a href="https://minitienda.online" target="_blank" class="btn">Contáctanos</a>
+        </div>
         <div id="storeSetup">
             <h2>Configuración de la Tienda</h2>
             <form id="customizationForm">
@@ -423,6 +428,8 @@
                 <!-- La vista previa de la tienda personalizada aparecerá aquí -->
             </div>
         </div>
+
+       
     </main>
     <footer>
         MiniTienda Express ® 2024
