@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -990,53 +989,29 @@ Selector de Colores: Usa Image Color Picker para encontrar la combinación de co
         });
     </script>
 
-   <script>
-    document.getElementById('registerButton').addEventListener('click', async function() {
-        const firstName = document.getElementById('firstName').value;
-        const lastName = document.getElementById('lastName').value;
-        const email = document.getElementById('email').value;
-        const phone = document.getElementById('phone').value;
-        const password = document.getElementById('password').value;
+    <script>
+        document.getElementById('registerButton').addEventListener('click', function() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
 
-        const userData = {
-            firstName,
-            lastName,
-            email,
-            phone,
-            password,
-        };
+            const userData = {
+                firstName,
+                lastName,
+                email,
+                phone,
+                password
+            };
 
-        try {
-            const response = await fetch('/api/register', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(userData),
-            });
+            // Save user data to localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
 
-            const text = await response.text();
-            console.log('Response text:', text);
-
-            if (!response.ok) {
-                throw new Error(text);
-            }
-
-            const result = JSON.parse(text);
-            if (result.success) {
-                alert('Registration successful');
-                // Redirect to store setup section
-                document.getElementById('registrationSection').style.display = 'none';
-                document.getElementById('storeSetup').style.display = 'block';
-            } else {
-                alert('Registration failed: ' + result.message);
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Registration failed: ' + error.message);
-        }
-    });
-</script>
-
+            // Redirect to store setup section
+            document.getElementById('registrationSection').style.display = 'none';
+            document.getElementById('storeSetup').style.display = 'block';
+        });
+    </script>
 </body>
 </html>
