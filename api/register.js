@@ -25,6 +25,7 @@ export default async (req, res) => {
 
             res.status(200).json({ success: true, message: 'User registered successfully', data: result.rows[0] });
         } catch (error) {
+            console.error('Database error:', error);
             res.status(500).json({ success: false, message: 'Server error', error: error.message });
         }
     } else {
