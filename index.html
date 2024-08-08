@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crea Tu MiniTiendaExpress</title>
+    <title>MiniTienda Express Shop Generator</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
     <style>
         body {
@@ -47,11 +47,6 @@
             border: 1px solid #ddd;
             border-radius: 8px;
             box-sizing: border-box;
-        }
-
-        .form-group input[type="color"] {
-            padding: 0;
-            height: 40px;
         }
 
         .btn {
@@ -169,16 +164,16 @@
         }
 
         footer {
-    text-align: center;
-    padding: 0.5px;
-    background-color: #ff3131;
-    color: white;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
-    /* Adjust the bottom padding or margin of the main content to ensure it doesn't overlap with the footer */
-    margin-bottom: 0px;
-}
+            text-align: center;
+            padding: 0.5px;
+            background-color: #ff3131;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            /* Adjust the bottom padding or margin of the main content to ensure it doesn't overlap with the footer */
+            margin-bottom: 0px;
+        }
 
         .resources {
             margin-top: 20px;
@@ -343,93 +338,127 @@
                 font-size: 0.9em;
             }
         }
+
+        /* Hide the store setup section initially */
+        #storeSetup {
+            display: none;
+        }
     </style>
 </head>
-
 <body>
     <header>
         <img src="https://i.imgur.com/T5cwFnq.png" alt="MiniTienda Express Logo">
-        <h1>Crea Tu MiniTienda Express </h1>
+        <h1>Crea tu MiniTienda Express</h1>
         <p>❤️</p>
     </header>
     <main>
-        <div class="resources">
-            <h3>🌐 Recursos adicionales para crear tu página:</h3>
-            <ul>
-                <li><a href="https://imgur.com/">Imgur</a></li>
-                <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li>
-            </ul>
-            <button class="btn" id="downloadGuideButton">Descargar 📚 Guía paso a paso</button>
-        </div>
- <div class="contact">
-            <h3>🙊 ¿Tienes alguna pregunta? ¿Necesitas ayuda?</h3>
-            <a href="https://minitienda.online" target="_blank" class="btn">Contáctanos</a>
-        </div>
-        <div id="storeSetup">
-            <h2>⚙️ Configuración de la Tienda</h2>
-            <form id="customizationForm">
+        <!-- Registration Section -->
+        <div id="registrationSection">
+            <h2>Formulario de Registro</h2>
+            <form id="registrationForm">
                 <div class="form-group">
-                    <label for="shopName">🏪 Nombre de la Tienda:</label>
-                    <input type="text" id="shopName" name="shopName" required>
+                    <label for="firstName">Nombre:</label>
+                    <input type="text" id="firstName" name="firstName" required>
                 </div>
                 <div class="form-group">
-                    <label for="themeColor">🎨 Color del Tema:</label>
-                    <input type="color" id="themeColor" name="themeColor" value="#e3240b">
+                    <label for="lastName">Apellido:</label>
+                    <input type="text" id="lastName" name="lastName" required>
                 </div>
                 <div class="form-group">
-                    <label for="font">Fuente:</label>
-                    <select id="font" name="font">
-                        <option value="Montserrat">Montserrat</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                    </select>
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
                 <div class="form-group">
-                    <label for="logoUrl">📷 URL del Logo
-                        <p> Ejemplo: https://i.imgur.com/ALtaldZ.png </p>
-                    </label>
-                    <input type="url" id="logoUrl" name="logoUrl">
+                    <label for="phone">Teléfono:</label>
+                    <input type="tel" id="phone" name="phone" required>
                 </div>
                 <div class="form-group">
-                    <label for="backgroundColor">🎨 Color de Fondo:</label>
-                    <input type="color" id="backgroundColor" name="backgroundColor" value="#ffffff">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
                 </div>
-                <div class="form-group">
-                    <label for="backgroundImage">📷 URL de la Imagen de Fondo:</label>
-                    <input type="url" id="backgroundImage" name="backgroundImage" placeholder="https://example.com/image.jpg">
-                </div>
-                <div class="form-group">
-                    <label for="whatsappNumber">📲 Número de WhatsApp:</label>
-                    <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+52 5512345678">
-                </div>
-<h3>🛍️ Ingresa tus productos, servicios, membresías y más:</h3>
-                <div id="productsContainer">
-                    <div class="form-group product-group" id="productGroup0">
-                        <label for="productTitle0">Nombre del Producto o Servicio:</label>
-                        <input type="text" id="productTitle0" name="productTitle0">
-                        <label for="productDescription0">Descripción del Producto o Servicio:</label>
-                        <input type="text" id="productDescription0" name="productDescription0">
-                        <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
-                        <input type="url" id="productImage0" name="productImage0">
-                        <label for="productPrice0">Precio del Producto o Servicio:</label>
-                        <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
-                        <button type="button" class="remove-product" onclick="removeProductFields(0)">Eliminar Producto o Servicio</button>
-                    </div>
-                </div>
-
-                <button type="button" id="addProductButton" class="btn">Añadir Producto o Servicio</button>
-                <button type="button" id="createStoreButton" class="btn">Crear MiniTienda</button>
-                <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
-                <button type="button" id="guideButton" class="btn">Guía Paso a Paso</button>
+                <button type="button" class="btn" id="registerButton">Registrarse</button>
             </form>
-            
-            <div class="preview" id="preview">
-                <h2>🔍 Vista Previa de tu MiniTienda Express</h2>
-                <!-- La vista previa de la tienda personalizada aparecerá aquí -->
+        </div>
+
+        <!-- Store Setup Section -->
+        <div id="storeSetup">
+            <div class="resources">
+                <h3>🌐 Recursos adicionales para crear tu página:</h3>
+                <ul>
+                    <li><a href="https://imgur.com/">Imgur</a></li>
+                    <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li> 
+                </ul>
+                
+              <button type="button" id="guideButton" class="btn">📚 Guía Paso a Paso</button>
+            </div>
+            <div class="contact">
+                <h3>🙊 ¿Tienes alguna pregunta? ¿Necesitas ayuda?</h3>
+                <a href="https://minitienda.online" target="_blank" class="btn">Contáctanos</a>
+            </div>
+            <div id="storeSetupForm">
+                <h2>⚙️ Configuración de la Tienda 🛠️</h2>
+                <form id="customizationForm">
+                    <div class="form-group">
+                        <label for="shopName">🏪 Nombre de la Tienda:</label>
+                        <input type="text" id="shopName" name="shopName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="themeColor">🎨 Color del Tema:</label>
+                        <input type="color" id="themeColor" name="themeColor" value="#e3240b">
+                    </div>
+                    <div class="form-group">
+                        <label for="font">Fuente:</label>
+                        <select id="font" name="font">
+                            <option value="Montserrat">Montserrat</option>
+                            <option value="Arial">Arial</option>
+                            <option value="Verdana">Verdana</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="logoUrl">📷 URL del Logo
+                            <p> Ejemplo: https://i.imgur.com/ALtaldZ.png </p>
+                        </label>
+                        <input type="url" id="logoUrl" name="logoUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="backgroundColor">🎨 Color de Fondo:</label>
+                        <input type="color" id="backgroundColor" name="backgroundColor" value="#ffffff">
+                    </div>
+                    <div class="form-group">
+                        <label for="backgroundImage">📷 URL de la Imagen de Fondo:</label>
+                        <input type="url" id="backgroundImage" name="backgroundImage" placeholder="https://example.com/image.jpg">
+                    </div>
+                    <div class="form-group">
+                        <label for="whatsappNumber">📲 Número de WhatsApp:</label>
+                        <input type="tel" id="whatsappNumber" name="whatsappNumber" placeholder="+52 5512345678">
+                    </div>
+                    <h3>🛍️ Ingresa tus productos, servicios, membresías y más:</h3>
+                    <div id="productsContainer">
+                        <div class="form-group product-group" id="productGroup0">
+                            <label for="productTitle0">Nombre del Producto o Servicio:</label>
+                            <input type="text" id="productTitle0" name="productTitle0">
+                            <label for="productDescription0">Descripción del Producto o Servicio:</label>
+                            <input type="text" id="productDescription0" name="productDescription0">
+                            <label for="productImage0">URL de la Imagen del Producto o Servicio. Ejemplo: https://i.imgur.com/ALtaldZ.png</label>
+                            <input type="url" id="productImage0" name="productImage0">
+                            <label for="productPrice0">Precio del Producto o Servicio:</label>
+                            <input type="number" id="productPrice0" name="productPrice0" step="0.01" min="0">
+                            <button type="button" class="remove-product" onclick="removeProductFields(0)">Eliminar Producto o Servicio</button>
+                        </div>
+                    </div>
+
+                    <button type="button" id="addProductButton" class="btn">Añadir Producto o Servicio</button>
+                    <button type="button" id="createStoreButton" class="btn">Crear MiniTienda</button>
+                    <button type="button" id="downloadCodeButton" class="btn">Descargar Código</button>
+                    <button type="button" id="guideButton" class="btn">Guía Paso a Paso</button>
+                </form>
+
+                <div class="preview" id="preview">
+                    <h2>🔍 Vista Previa de tu MiniTienda Express</h2>
+                    <!-- La vista previa de la tienda personalizada aparecerá aquí -->
+                </div>
             </div>
         </div>
-
-       
     </main>
     <footer>
         MiniTienda Express ® 2024
@@ -479,7 +508,6 @@
                 <li>Selector de Colores: Usa Image Color Picker para encontrar la combinación de colores perfecta.</li>
             </ul>
             <button id="closeGuide">Cerrar Guía</button>
-            
         </div>
     </div>
 
@@ -953,6 +981,31 @@ Selector de Colores: Usa Image Color Picker para encontrar la combinación de co
             a.download = 'Guía_paso_a_paso.txt';
             a.click();
             URL.revokeObjectURL(url);
+        });
+    </script>
+
+    <script>
+        document.getElementById('registerButton').addEventListener('click', function() {
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+
+            const userData = {
+                firstName,
+                lastName,
+                email,
+                phone,
+                password
+            };
+
+            // Save user data to localStorage
+            localStorage.setItem('userData', JSON.stringify(userData));
+
+            // Redirect to store setup section
+            document.getElementById('registrationSection').style.display = 'none';
+            document.getElementById('storeSetup').style.display = 'block';
         });
     </script>
 </body>
