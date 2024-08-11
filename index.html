@@ -1,3 +1,4 @@
+
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -19,6 +20,7 @@
             padding: 20px;
             background-color: #ff3131;
             color: white;
+            animation: fadeIn 1s ease-in-out;
         }
 
         header img {
@@ -29,24 +31,7 @@
 
         main {
             padding: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .btn {
@@ -60,6 +45,7 @@
             font-size: 1.1em;
             margin-top: 10px;
             transition: all 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .btn:hover {
@@ -67,11 +53,63 @@
             color: black;
         }
 
+        .privacy-policy {
+            text-align: left;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            color: #333;
+            font-size: 0.9em;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        footer {
+            text-align: center;
+            padding: 0.5px;
+            background-color: #ff3131;
+            color: white;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        iframe {
+            border: none;
+            width: 100%;
+            height: 1087px;
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
+        }
+
         .preview {
             margin-top: 20px;
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .preview-header {
@@ -79,6 +117,7 @@
             flex-direction: column;
             align-items: center;
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .preview-header img {
@@ -87,6 +126,7 @@
             border-radius: 50%;
             object-fit: cover;
             margin-bottom: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .product-item {
@@ -96,6 +136,7 @@
             background: #fff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .product-item img {
@@ -104,6 +145,7 @@
             border-radius: 10px;
             object-fit: cover;
             margin-bottom: 10px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .product-grid {
@@ -111,39 +153,47 @@
             flex-wrap: wrap;
             gap: 20px;
             justify-content: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .whatsapp-contact {
             margin-top: 20px;
             text-align: center;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .whatsapp-contact p {
             color: black;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .whatsapp-contact a {
             color: #25D366;
             text-decoration: none;
             font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .whatsapp-contact a:hover {
             text-decoration: underline;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .menu-title-container {
             margin-bottom: 40px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .product-heading {
             margin-top: 30px;
             font-size: 1.5em;
             color: #e3240b;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .product-group {
             margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .remove-product {
@@ -156,23 +206,13 @@
             font-size: 1em;
             margin-top: 10px;
             transition: all 0.3s ease;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .remove-product:hover {
             background-color: #ffdd00;
             color: black;
-        }
-
-        footer {
-            text-align: center;
-            padding: 0.5px;
-            background-color: #ff3131;
-            color: white;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
-            /* Adjust the bottom padding or margin of the main content to ensure it doesn't overlap with the footer */
-            margin-bottom: 0px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .resources {
@@ -181,64 +221,36 @@
             background-color: #fff;
             color: #e3240b;
             border-radius: 8px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .resources a {
             color: #e3240b;
             text-decoration: none;
             font-weight: bold;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .resources a:hover {
             text-decoration: underline;
+            animation: fadeIn 1s ease-in-out;
         }
 
         @keyframes fadeIn {
             from {
                 opacity: 0;
             }
-
             to {
                 opacity: 1;
             }
         }
 
-        @keyframes fadeInDown {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Hide the store setup section initially */
+        #storeSetup {
+            display: none;
         }
 
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        header,
-        .form-group,
-        .btn,
-        .product-item,
-        .whatsapp-contact,
-        .menu-title-container,
-        .remove-product,
-        footer,
-        .resources {
-            animation: fadeIn 1s ease-in-out;
-        }
-
+        /* Modal styles */
         #guideModal {
             display: none;
             position: fixed;
@@ -252,6 +264,7 @@
             overflow-y: auto;
             padding: 20px;
             box-sizing: border-box;
+            animation: fadeIn 1s ease-in-out;
         }
 
         #guideContent {
@@ -260,7 +273,7 @@
             border-radius: 8px;
             max-width: 800px;
             width: 100%;
-            animation: fadeInDown 0.5s;
+            animation: fadeIn 0.5s;
             box-sizing: border-box;
             font-size: 0.9em;
         }
@@ -293,107 +306,78 @@
             background-color: #ffdd00;
             color: black;
         }
-
-        #downloadGuide {
-            background-color: #e3240b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 1em;
-            margin-top: 10px;
-            transition: all 0.3s ease;
-        }
-
-        #downloadGuide:hover {
-            background-color: #ffdd00;
-            color: black;
-        }
-
-        /* Media Queries for Mobile Responsiveness */
-        @media (max-width: 768px) {
-            header img {
-                width: 100px;
-            }
-
-            .btn {
-                font-size: 1em;
-                padding: 10px 20px;
-            }
-
-            #guideContent {
-                font-size: 0.8em;
-            }
-
-            #guideContent h2 {
-                font-size: 1.2em;
-            }
-
-            #guideContent h3 {
-                font-size: 1em;
-            }
-
-            #guideContent h4 {
-                font-size: 0.9em;
-            }
-        }
-
-        /* Hide the store setup section initially */
-        #storeSetup {
-            display: none;
-        }
     </style>
 </head>
 <body>
     <header>
         <img src="https://i.imgur.com/T5cwFnq.png" alt="MiniTienda Express Logo">
         <h1>Crea tu MiniTienda Express</h1>
-        <p>❤️</p>
     </header>
     <main>
-        <!-- Registration Section -->
-        <div id="registrationSection">
-            <h2>Formulario de Registro</h2>
-            <form id="registrationForm">
-                <div class="form-group">
-                    <label for="firstName">Nombre:</label>
-                    <input type="text" id="firstName" name="firstName" required>
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Apellido:</label>
-                    <input type="text" id="lastName" name="lastName" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Teléfono:</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <button type="button" class="btn" id="registerButton">Registrarse</button>
-            </form>
+        <!-- Google Form Section -->
+        <h2>Formulario de Registro</h2>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfloWMPNN4TjeB-zftnwrDFs7LmEJwULNSno_m-JLeBDnrHYQ/viewform?embedded=true"></iframe>
+
+        <div class="privacy-policy">
+            <h3>Política de Privacidad</h3>
+            <p>Última actualización: Julio 2024</p>
+
+            <p>En MiniTienda Express, nos comprometemos a proteger su privacidad y a garantizar la seguridad de su información personal. Esta Política de Privacidad describe cómo recopilamos, usamos y protegemos la información que obtenemos de nuestros usuarios y clientes.</p>
+
+            <h4>1. Información que Recopilamos</h4>
+            <p>Recopilamos la siguiente información cuando usted visita nuestro sitio web o utiliza nuestros servicios:</p>
+            <ul>
+                <li><strong>Información Personal:</strong> Nombre, dirección de correo electrónico, número de teléfono y detalles de contacto que usted proporciona voluntariamente al registrarse o al ponerse en contacto con nosotros.</li>
+                <li><strong>Información de Transacciones:</strong> Datos relacionados con la compra de nuestros paquetes, incluyendo detalles de pago.</li>
+                <li><strong>Información de Navegación:</strong> Datos sobre su visita a nuestro sitio web, incluyendo su dirección IP, tipo de navegador y páginas visitadas.</li>
+            </ul>
+
+            <h4>2. Uso de la Información</h4>
+            <p>Utilizamos la información que recopilamos para los siguientes propósitos:</p>
+            <ul>
+                <li><strong>Proveer y Mejorar Nuestros Servicios:</strong> Para configurar y gestionar su tienda en línea o página web, y para responder a sus consultas y solicitudes.</li>
+                <li><strong>Procesar Transacciones:</strong> Para procesar sus pagos y enviarle confirmaciones de compra.</li>
+                <li><strong>Comunicación:</strong> Para enviarle actualizaciones sobre nuestros servicios, promociones y noticias que puedan ser de su interés. Puede optar por no recibir estas comunicaciones en cualquier momento.</li>
+                <li><strong>Análisis y Mejora:</strong> Para analizar cómo se usa nuestro sitio web y mejorar nuestros servicios.</li>
+            </ul>
+
+            <h4>3. Protección de la Información</h4>
+            <p>Implementamos medidas de seguridad razonables para proteger su información personal de accesos no autorizados, divulgación, alteración o destrucción. Sin embargo, ningún sistema de transmisión de datos o almacenamiento electrónico es completamente seguro, y no podemos garantizar la seguridad absoluta de su información.</p>
+
+            <h4>4. Compartición de Información</h4>
+            <p>No compartimos su información personal con terceros, excepto en las siguientes circunstancias:</p>
+            <ul>
+                <li><strong>Proveedores de Servicios:</strong> Con proveedores de servicios que nos ayudan a operar nuestro sitio web o a procesar transacciones, siempre que estos proveedores se comprometan a mantener la confidencialidad de su información.</li>
+                <li><strong>Requisitos Legales:</strong> Cuando sea necesario para cumplir con la ley, responder a solicitudes legales o proteger nuestros derechos y propiedad.</li>
+            </ul>
+
+            <h4>5. Sus Derechos</h4>
+            <p>Usted tiene el derecho de acceder, corregir o eliminar la información personal que tenemos sobre usted. Para ejercer estos derechos, por favor contáctenos a través de la información proporcionada en la sección de contacto a continuación.</p>
+
+            <h4>6. Cambios en Esta Política</h4>
+            <p>Podemos actualizar esta Política de Privacidad de vez en cuando. Cualquier cambio será publicado en esta página con una fecha de revisión actualizada. Le recomendamos revisar esta política periódicamente para estar informado sobre cómo protegemos su información.</p>
+
+            <h4>7. Contacto</h4>
+            <p>Si tiene alguna pregunta o inquietud sobre esta Política de Privacidad, puede contactarnos en:</p>
+            <p><strong>Correo Electrónico:</strong> info@minitienda.online</p>
+
+            <p>Gracias por confiar en MiniTienda Express. Valoramos su privacidad y nos esforzamos por proteger su información personal.</p>
         </div>
+
+        <p><input type="checkbox" id="formSubmitted"> Aceptar Política de Privacidad </p>
+        <p><button type="button" id="ingresarButton" class="btn">Ingresar</button>
 
         <!-- Store Setup Section -->
         <div id="storeSetup">
             <div class="resources">
-             
-
-
                 <h3>🌐 Recursos adicionales para crear tu MiniTienda:</h3>
                 <ul>
                     <li><a href="https://imgur.com/">Imgur</a></li>
                     <li><a href="https://imagecolorpicker.com/">Image Color Picker</a></li><br>
-                  <p> <a href="https://chatgpt.com/g/g-jSogpOxDa-minitienda-express" target="_blank">🤖 Pide ayuda a nuestro Bot para crear tu MiniTienda</a></li>
+                    <li><a href="https://chatgpt.com/g/g-jSogpOxDa-minitienda-express" target="_blank">🤖 Pide ayuda a nuestro Bot para crear tu MiniTienda</a></li>
                 </ul><br>
                 
-              <button type="button" id="guideButton" class="btn">📚 Guía Paso a Paso</button>
+                <button type="button" id="guideButton" class="btn">📚 Guía Paso a Paso</button>
             </div>
             <div class="contact">
                 <h3>🙊 ¿Tienes alguna pregunta? ¿Necesitas ayuda?</h3>
@@ -468,54 +452,55 @@
         MiniTienda Express ® 2024
     </footer>
 
+    <!-- Modal for Guía Paso a Paso -->
     <div id="guideModal">
         <div id="guideContent">
            <h1>Guía para Crear tu MiniTienda en Línea</h1>
         
-        <h2>Sección de Encabezado</h2>
-        <ul>
-            <li><strong>Logo:</strong> Agrega la URL del logo de tu tienda donde dice "LOGO_URL".</li>
-            <li><strong>Título:</strong> Cambia el texto "Crea Tu MiniTienda Express" por el nombre de tu tienda.</li>
-        </ul>
+            <h2>Sección de Encabezado</h2>
+            <ul>
+                <li><strong>Logo:</strong> Agrega la URL del logo de tu tienda donde dice "LOGO_URL".</li>
+                <li><strong>Título:</strong> Cambia el texto "Crea Tu MiniTienda Express" por el nombre de tu tienda.</li>
+            </ul>
         
-        <h2>Configuración de la Tienda</h2>
-        <ul>
-            <li><strong>Nombre de la Tienda:</strong> En el grupo de formulario con la etiqueta "Nombre de la Tienda:", ingresa el nombre de tu tienda.</li>
-            <li><strong>Color del Tema:</strong> Establece el color del tema deseado usando el selector de color.</li>
-            <li><strong>Fuente:</strong> Selecciona una fuente del menú desplegable.</li>
-            <li><strong>URL del Logo:</strong> Proporciona la URL de la imagen de tu logo.</li>
-            <li><strong>Color de Fondo:</strong> Elige un color de fondo para tu tienda.</li>
-            <li><strong>Imagen de Fondo:</strong> Proporciona una URL para una imagen de fondo si lo deseas.</li>
-            <li><strong>Número de WhatsApp:</strong> Ingresa tu número de WhatsApp para el contacto con clientes.</li>
-        </ul>
+            <h2>Configuración de la Tienda</h2>
+            <ul>
+                <li><strong>Nombre de la Tienda:</strong> En el grupo de formulario con la etiqueta "Nombre de la Tienda:", ingresa el nombre de tu tienda.</li>
+                <li><strong>Color del Tema:</strong> Establece el color del tema deseado usando el selector de color.</li>
+                <li><strong>Fuente:</strong> Selecciona una fuente del menú desplegable.</li>
+                <li><strong>URL del Logo:</strong> Proporciona la URL de la imagen de tu logo.</li>
+                <li><strong>Color de Fondo:</strong> Elige un color de fondo para tu tienda.</li>
+                <li><strong>Imagen de Fondo:</strong> Proporciona una URL para una imagen de fondo si lo deseas.</li>
+                <li><strong>Número de WhatsApp:</strong> Ingresa tu número de WhatsApp para el contacto con clientes.</li>
+            </ul>
         
-        <h2>Agregar Productos o Servicios</h2>
-        <ul>
-            <li><strong>Nombre del Producto:</strong> Ingresa el nombre de tu producto o servicio en el campo "Nombre del Producto o Servicio:".</li>
-            <li><strong>Descripción del Producto:</strong> Describe tu producto o servicio.</li>
-            <li><strong>URL de la Imagen del Producto:</strong> Proporciona la URL de la imagen del producto.</li>
-            <li><strong>Precio del Producto:</strong> Ingresa el precio de tu producto o servicio.</li>
-            <li><strong>Añadir Más Productos:</strong> Haz clic en el botón "Añadir Producto o Servicio" para agregar más productos. Repite los pasos para cada producto.</li>
-            <li><strong>Eliminar Producto:</strong> Usa el botón "Eliminar Producto o Servicio" para eliminar cualquier producto.</li>
-        </ul>
+            <h2>Agregar Productos o Servicios</h2>
+            <ul>
+                <li><strong>Nombre del Producto:</strong> Ingresa el nombre de tu producto o servicio en el campo "Nombre del Producto o Servicio:".</li>
+                <li><strong>Descripción del Producto:</strong> Describe tu producto o servicio.</li>
+                <li><strong>URL de la Imagen del Producto:</strong> Proporciona la URL de la imagen del producto.</li>
+                <li><strong>Precio del Producto:</strong> Ingresa el precio de tu producto o servicio.</li>
+                <li><strong>Añadir Más Productos:</strong> Haz clic en el botón "Añadir Producto o Servicio" para agregar más productos. Repite los pasos para cada producto.</li>
+                <li><strong>Eliminar Producto:</strong> Usa el botón "Eliminar Producto o Servicio" para eliminar cualquier producto.</li>
+            </ul>
         
-        <h2>Vista Previa y Personalización</h2>
-        <ul>
-            <li><strong>Sección de Vista Previa:</strong> La sección de vista previa se actualizará dinámicamente a medida que ingreses la información. Esto te permite ver cómo se verá tu tienda antes de finalizar.</li>
-            <li><strong>Personalización:</strong> Ajusta cualquier configuración y agrega/elimina productos hasta que estés satisfecho con la apariencia de la tienda.</li>
-        </ul>
+            <h2>Vista Previa y Personalización</h2>
+            <ul>
+                <li><strong>Sección de Vista Previa:</strong> La sección de vista previa se actualizará dinámicamente a medida que ingreses la información. Esto te permite ver cómo se verá tu tienda antes de finalizar.</li>
+                <li><strong>Personalización:</strong> Ajusta cualquier configuración y agrega/elimina productos hasta que estés satisfecho con la apariencia de la tienda.</li>
+            </ul>
         
-        <h2>Finalización y Guardado</h2>
-        <ul>
-            <li><strong>Crear Tienda:</strong> Haz clic en el botón "Crear MiniTienda" para finalizar tu tienda.</li>
-            <li><strong>Descargar Código:</strong> Usa el botón "Descargar Página" para descargar tu tienda personalizada.</li>
-        </ul>
+            <h2>Finalización y Guardado</h2>
+            <ul>
+                <li><strong>Crear Tienda:</strong> Haz clic en el botón "Crear MiniTienda" para finalizar tu tienda.</li>
+                <li><strong>Descargar Código:</strong> Usa el botón "Descargar Página" para descargar tu tienda personalizada.</li>
+            </ul>
         
-        <h2>Recursos Adicionales</h2>
-        <ul>
-            <li><strong>Carga de Imágenes:</strong> Usa Imgur para subir imágenes.</li>
-            <li><strong>Selector de Colores:</strong> Usa Image Color Picker para encontrar la combinación de colores perfecta.</li>
-        </ul>
+            <h2>Recursos Adicionales</h2>
+            <ul>
+                <li><strong>Carga de Imágenes:</strong> Usa Imgur para subir imágenes.</li>
+                <li><strong>Selector de Colores:</strong> Usa Image Color Picker para encontrar la combinación de colores perfecta.</li>
+            </ul>
             <button id="closeGuide">Cerrar Guía</button>
         </div>
     </div>
@@ -911,110 +896,23 @@
             document.getElementById('guideModal').style.display = 'none';
         });
 
-        document.getElementById('downloadGuideButton').addEventListener('click', function() {
-            const guideContent = `Guía paso a paso
-English Version
-Header Section
-
-Logo: Add the URL of your store's logo where it says "LOGO_URL".
-Title: Change the text "Crea Tu MiniTienda Express" to your store's name.
-Store Configuration
-
-Store Name: In the form group with the label "Nombre de la Tienda:", input the name of your store.
-Theme Color: Set the desired theme color using the color picker.
-Font: Select a font from the dropdown options.
-Logo URL: Provide the URL of your logo image.
-Background Color: Choose a background color for your store.
-Background Image: Provide a URL for a background image if desired.
-WhatsApp Number: Enter your WhatsApp number for customer contact.
-Adding Products or Services
-
-Product Name: Enter the name of your product or service in the "Nombre del Producto o Servicio:" field.
-Product Description: Describe your product or service.
-Product Image URL: Provide the URL for the product image.
-Product Price: Enter the price of your product or service.
-Add More Products: Click the "Añadir Producto o Servicio" button to add more products. Repeat the steps for each product.
-Remove Product: Use the "Eliminar Producto o Servicio" button to remove any product.
-Preview and Customize
-
-Preview Section: The preview section will dynamically update as you input information. This allows you to see how your store will look before finalizing.
-Customization: Adjust any settings and add/remove products until satisfied with the store's appearance.
-Finalizing and Saving
-
-Create Store: Click on the "Crear MiniTienda" button to finalize your store.
-Download Code: Use the "Descargar Código" button to download the HTML code of your customized store. This file can be uploaded to a web server to make your store live.
-Additional Resources
-
-Image Uploads: Use Imgur to upload images.
-Color Picker: Use Image Color Picker to find the perfect color scheme.
-Spanish Version
-Guía para Crear tu MiniTienda en Línea
-Sección de Encabezado
-
-Logo: Agrega la URL del logo de tu tienda donde dice "LOGO_URL".
-Título: Cambia el texto "Crea Tu MiniTienda Express" por el nombre de tu tienda.
-Configuración de la Tienda
-
-Nombre de la Tienda: En el grupo de formulario con la etiqueta "Nombre de la Tienda:", ingresa el nombre de tu tienda.
-Color del Tema: Establece el color del tema deseado usando el selector de color.
-Fuente: Selecciona una fuente del menú desplegable.
-URL del Logo: Proporciona la URL de la imagen de tu logo.
-Color de Fondo: Elige un color de fondo para tu tienda.
-Imagen de Fondo: Proporciona una URL para una imagen de fondo si lo deseas.
-Número de WhatsApp: Ingresa tu número de WhatsApp para el contacto con clientes.
-Agregar Productos o Servicios
-
-Nombre del Producto: Ingresa el nombre de tu producto o servicio en el campo "Nombre del Producto o Servicio:".
-Descripción del Producto: Describe tu producto o servicio.
-URL de la Imagen del Producto: Proporciona la URL de la imagen del producto.
-Precio del Producto: Ingresa el precio de tu producto o servicio.
-Añadir Más Productos: Haz clic en el botón "Añadir Producto o Servicio" para agregar más productos. Repite los pasos para cada producto.
-Eliminar Producto: Usa el botón "Eliminar Producto o Servicio" para eliminar cualquier producto.
-Vista Previa y Personalización
-
-Sección de Vista Previa: La sección de vista previa se actualizará dinámicamente a medida que ingreses la información. Esto te permite ver cómo se verá tu tienda antes de finalizar.
-Personalización: Ajusta cualquier configuración y agrega/elimina productos hasta que estés satisfecho con la apariencia de la tienda.
-Finalización y Guardado
-
-Crear Tienda: Haz clic en el botón "Crear MiniTienda" para finalizar tu tienda.
-Descargar Código: Usa el botón "Descargar Código" para descargar el código HTML de tu tienda personalizada. Este archivo se puede cargar en un servidor web para hacer que tu tienda esté en línea.
-Recursos Adicionales
-
-Carga de Imágenes: Usa Imgur para subir imágenes.
-Selector de Colores: Usa Image Color Picker para encontrar la combinación de colores perfecta.`;
-
-            const blob = new Blob([guideContent], { type: 'text/plain' });
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = 'Guía_paso_a_paso.txt';
-            a.click();
-            URL.revokeObjectURL(url);
+        document.getElementById('formSubmitted').addEventListener('change', function() {
+            const ingresarButton = document.getElementById('ingresarButton');
+            if (this.checked) {
+                ingresarButton.classList.add('active');
+            } else {
+                ingresarButton.classList.remove('active');
+            }
         });
-    </script>
 
-    <script>
-        document.getElementById('registerButton').addEventListener('click', function() {
-            const firstName = document.getElementById('firstName').value;
-            const lastName = document.getElementById('lastName').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const password = document.getElementById('password').value;
-
-            const userData = {
-                firstName,
-                lastName,
-                email,
-                phone,
-                password
-            };
-
-            // Save user data to localStorage
-            localStorage.setItem('userData', JSON.stringify(userData));
-
-            // Redirect to store setup section
-            document.getElementById('registrationSection').style.display = 'none';
-            document.getElementById('storeSetup').style.display = 'block';
+        document.getElementById('ingresarButton').addEventListener('click', function() {
+            if (document.getElementById('formSubmitted').checked) {
+                document.querySelector('h2').style.display = 'none';
+                document.querySelector('iframe').style.display = 'none';
+                document.querySelector('.privacy-policy').style.display = 'none';
+                document.getElementById('storeSetup').style.display = 'block';
+                window.scrollTo(0, document.getElementById('storeSetup').offsetTop);
+            }
         });
     </script>
 </body>
